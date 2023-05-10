@@ -29,5 +29,9 @@ jobs:
     steps:
     # Runs a single command using the runners shell
     - name: Get emscripten
-      run: git clone https://github.com/emscripten-core/emsdk.git
-      run: cd
+    - run: |
+        git clone https://github.com/emscripten-core/emsdk.git
+        cd emsdk
+        git pull
+      
+      
