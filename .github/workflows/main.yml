@@ -5,7 +5,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: "Build with Emscripten"
       - uses: mymindstorm/setup-emsdk@v11
 
       - name: Verify
