@@ -38,10 +38,10 @@ jobs:
       - name: PACK
         uses: actions/upload-artifact@v3
         with:
-          name: my-artifact
+          name: page
           path: out/
       - name: Deploy
         uses: actions/deploy-pages@v2.0.1
         with:
-          artifact_name: my-artifact
+          artifact_name: page
         
