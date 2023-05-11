@@ -27,7 +27,7 @@ jobs:
       - name: Verify
         run: emcc -v
       - name: mkdir
-        run: mkdir -p /out
+        run: mkdir -p ./out
       - name: Build
         run: emcc main.cpp -o out/main.html
 
