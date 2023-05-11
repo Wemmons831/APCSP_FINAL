@@ -14,10 +14,11 @@ jobs:
           # The cache folder will be placed in the build directory,
           #  so make sure it doesn't conflict with anything!
           actions-cache-folder: 'emsdk-cache'
-
+      - uses: mymindstorm/setup-emsdk@v11
       - name: Verify
         run: emcc -v
       - name: Checkout
         uses: actions/checkout@v3.5.2
       - name: Build
+
         run: emcc main.cpp
