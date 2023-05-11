@@ -26,12 +26,13 @@ jobs:
  
       - name: Verify
         run: emcc -v
-      
+      - name: mkdir
+        run: mkdir -p /out
       - name: Build
-        run: emcc main.cpp -o main.html
+        run: emcc main.cpp -o out/main.html
 
         
       - uses: actions/upload-artifact@v3
         with:
           name: my-artifact
-          path: main.html
+          path: out/
