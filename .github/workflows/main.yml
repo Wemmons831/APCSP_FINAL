@@ -36,7 +36,7 @@ jobs:
         run: emcc main.cpp -o out/main.html
 
       - name: PACK
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v1
         with:
           name: page
           path: out/
