@@ -39,4 +39,7 @@ jobs:
           name: my-artifact
           path: out/
       - name: Deploy
-        uses: actions/deploy-pages@v2
+        uses: actions/deploy-pages@v2.0.1
+        with:
+          artifact_name: my-artifact
+        
