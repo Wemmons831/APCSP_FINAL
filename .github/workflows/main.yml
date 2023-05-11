@@ -4,6 +4,8 @@ on: [push]
 env:
   EM_VERSION: 1.39.18
   EM_CACHE_FOLDER: 'emsdk-cache'
+  name: github-pages
+  url: ${{ steps.deployment.outputs.page_url }}
 
 
 jobs:
@@ -31,8 +33,11 @@ jobs:
       - name: Build
         run: emcc main.cpp -o out/main.html
 
-        
+      - name: PACK
       - uses: actions/upload-artifact@v3
         with:
           name: my-artifact
           path: out/
+      - name: Deploy
+        uses: actions/deploy-pages@v2
+        
