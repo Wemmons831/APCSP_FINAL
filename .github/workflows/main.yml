@@ -29,9 +29,8 @@ jobs:
       
       - name: Build
         run: emcc main.cpp -o main.html
-      - name: add output to repo
-        run: git add . |
-             git commit -m "added" |
-             git fetch origin master |
-             git push origin HEAD:master
+      - name: Deploy
+        uses: actions/deploy-pages@v2.0.1
+        with:
+          artifact_name: "main.html"
         
