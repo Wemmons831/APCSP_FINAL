@@ -29,7 +29,7 @@ jobs:
   
         
       - name: Build
-        run: emcc main.cpp -0 /out/main.html
+        run: emcc main.cpp -o /out/main.html
       - name: add output to repo
         run: git add./out |
              git commit -m "added" |
