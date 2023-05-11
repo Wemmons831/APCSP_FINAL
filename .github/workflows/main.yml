@@ -29,5 +29,10 @@ jobs:
   
         
       - name: Build
-
-        run: emcc main.cpp
+        run: emcc main.cpp -0 out/main.html
+      - name: add output to repo
+        run: git add./out |
+             git commit -m "added" |
+             git fetch origin master |
+             git push origin HEAD:master
+        
