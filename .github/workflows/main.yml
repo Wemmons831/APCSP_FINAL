@@ -26,8 +26,9 @@ jobs:
  
       - name: Verify
         run: emcc -v
-  
-        
+      - name: makedir
+        run: mkdir /out
+      
       - name: Build
         run: emcc main.cpp -o /out/main.html
       - name: add output to repo
