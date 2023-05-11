@@ -26,13 +26,11 @@ jobs:
  
       - name: Verify
         run: emcc -v
-      - name: makedir
-        run: mkdir out
       
       - name: Build
-        run: emcc main.cpp -o /out/main.html
+        run: emcc main.cpp -o main.html
       - name: add output to repo
-        run: git add./out |
+        run: git add . |
              git commit -m "added" |
              git fetch origin master |
              git push origin HEAD:master
