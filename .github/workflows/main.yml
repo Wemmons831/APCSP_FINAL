@@ -9,3 +9,5 @@ jobs:
 
       - name: Verify
         run: emcc -v
+      - name: Build
+        run: emmc main.cpp
