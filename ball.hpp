@@ -5,7 +5,7 @@ class Ball
     int rad;
     Color color;
     Vector2 position;
-    void Ball(Vector2 _position,int _rad, Color _color)
+    Ball(Vector2 _position,int _rad, Color _color)
     {
         rad = _rad;
         color = _color;

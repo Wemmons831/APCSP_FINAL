@@ -30,10 +30,7 @@ jobs:
        
       - name: Verify
         run: emcc -v
-      - run: |
-          emsdk update
-          emsdk install latest
-          emsdk activate latest
+      
       - name: mkdir
         run: mkdir -p ./out
       - name: Build
