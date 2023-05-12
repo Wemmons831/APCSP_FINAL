@@ -17,4 +17,4 @@ class Ball
         DrawCircle(position.x,position.y,rad,color);
     }
         
-}
+};
