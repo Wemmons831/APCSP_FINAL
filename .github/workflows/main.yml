@@ -41,6 +41,8 @@ jobs:
         with:
           name: github-pages
           path: out/
+      - name: Verify pack
+        run: ls out/
       - name: Deploy
         id: deployment
         uses: actions/deploy-pages@v2
