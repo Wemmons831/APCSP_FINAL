@@ -34,11 +34,12 @@ jobs:
       - name: mkdir
         run: mkdir -p ./out
       - name: Build
-        run: emcc main.cpp -o out/index.html
+        run: emcc -o index.html main.cpp -Os -Wall ./libraylib.a -I. -I./ -L. -L./ -s USE_GLFW=3 -DPLATFORM_WEB
 
       - name: PACK
         uses: actions/upload-pages-artifact@v1
         with:
+
 
           path: out/
       - name: Verify pack
@@ -46,3 +47,4 @@ jobs:
       - name: Deploy
         id: deployment
         uses: actions/deploy-pages@v2
+
