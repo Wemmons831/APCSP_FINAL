@@ -1,5 +1,5 @@
 #include "raylib.h"
-
+#include "ball.hpp"
 //------------------------------------------------------------------------------------
 // Program main entry point
 //------------------------------------------------------------------------------------
@@ -15,6 +15,9 @@ int main(void)
     SetTargetFPS(60);               // Set our game to run at 60 frames-per-second
     //--------------------------------------------------------------------------------------
 
+    Ball ball({screenWidth/2,screenHeight/2}, 10 , BLUE);
+
+
     // Main game loop
     while (!WindowShouldClose())    // Detect window close button or ESC key
     {
@@ -27,10 +30,8 @@ int main(void)
         //----------------------------------------------------------------------------------
         BeginDrawing();
 
-            ClearBackground(RAYWHITE);
-
-            DrawText("Congrats! You created your first window!", 190, 200, 20, LIGHTGRAY);
-
+            ClearBackground(GRAY);
+            ball.Draw();
         EndDrawing();
         //----------------------------------------------------------------------------------
     }
