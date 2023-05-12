@@ -27,15 +27,18 @@ jobs:
         with:
           version: ${{env.EM_VERSION}}
           actions-cache-folder: ${{env.EM_CACHE_FOLDER}}
-      
- 
+       
       - name: Verify
         run: emcc -v
+      - run: |
+          ./emsdk update
+          ./emsdk install latest
+          ./emsdk activate latest
       - name: mkdir
         run: mkdir -p ./out
       - name: Build
         run: emcc -o index.html main.cpp -Os -Wall ./libraylib.a -I. -I./ -L. -L./ -s USE_GLFW=3 -DPLATFORM_WEB
-
+           
       - name: PACK
         uses: actions/upload-pages-artifact@v1
         with:
