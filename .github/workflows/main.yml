@@ -34,7 +34,7 @@ jobs:
       - name: mkdir
         run: mkdir -p ./out
       - name: Build
-        run: emcc main.cpp -o out/main.html
+        run: emcc main.cpp -o out/index.html
 
       - name: PACK
         uses: actions/upload-pages-artifact@v1
