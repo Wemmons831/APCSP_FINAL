@@ -1,4 +1,5 @@
 #include "raylib.h"
+#include "raymath.h"
 class Ball
 {
     public:
@@ -24,7 +25,7 @@ class Ball
             if(position.x < 0){
                 position.x = 800;
             }
-            if(posistion.y > 450){
+            if(position.y > 450){
                 position.y = 0;
             }
             if(position.y < 0){
