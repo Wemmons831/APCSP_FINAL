@@ -16,19 +16,19 @@ class Ball
     }
     void Update()
     {
-        posistion = Vector2Add(posistion,force);
+        position = Vector2Add(position,force);
         if(wrap){
-            if(posistion.x > 800){
-                posistion.x = 0;
+            if(position.x > 800){
+                position.x = 0;
             }
-            if(posistion.x < 0){
-                posistion.x = 800;
+            if(position.x < 0){
+                position.x = 800;
             }
             if(posistion.y > 450){
-                posistion.y = 0;
+                position.y = 0;
             }
-            if(posistion.y < 0){
-                posistion.y = 450;
+            if(position.y < 0){
+                position.y = 450;
             }
         }
     }
