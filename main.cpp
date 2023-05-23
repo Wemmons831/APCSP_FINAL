@@ -16,7 +16,7 @@ int main(void)
     //--------------------------------------------------------------------------------------
 
     Ball ball({screenWidth/2,screenHeight/2}, 10 , BLUE);
-    ball.force = {10,10}
+    ball.force = {10,10};
 
     // Main game loop
     while (!WindowShouldClose())    // Detect window close button or ESC key
@@ -25,7 +25,7 @@ int main(void)
         //----------------------------------------------------------------------------------
         // TODO: Update your variables here
         //----------------------------------------------------------------------------------
-        ball.Update()
+        ball.Update();
         // Draw
         //----------------------------------------------------------------------------------
         BeginDrawing();

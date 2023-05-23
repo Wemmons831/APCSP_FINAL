@@ -22,13 +22,13 @@ class Ball
                 posistion.x = 0;
             }
             if(posistion.x < 0){
-                posistion.x = 800
+                posistion.x = 800;
             }
             if(posistion.y > 450){
-                posistion.y = 0
+                posistion.y = 0;
             }
             if(posistion.y < 0){
-                posistion.y = 450
+                posistion.y = 450;
             }
         }
     }
