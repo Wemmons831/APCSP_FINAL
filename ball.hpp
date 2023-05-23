@@ -6,7 +6,7 @@ class Ball
     Color color;
     Vector2 position;
     bool warp;
-    Vector2 force = {0,0}
+    Vector2 force = {0,0};
     Ball(Vector2 _position,int _rad, Color _color, _wrap = true)
     {
         rad = _rad;
@@ -16,7 +16,7 @@ class Ball
     }
     void Update()
     {
-        posistion = Vector2Add(posistion,force)
+        posistion = Vector2Add(posistion,force);
         if(wrap){
             if(posistion.x > 800){
                 posistion.x = 0;
