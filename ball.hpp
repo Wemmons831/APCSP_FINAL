@@ -7,7 +7,7 @@ class Ball
     Vector2 position;
     bool warp;
     Vector2 force = {0,0};
-    Ball(Vector2 _position,int _rad, Color _color, _wrap = true)
+    Ball(Vector2 _position,int _rad, Color _color,bool _wrap = true)
     {
         rad = _rad;
         color = _color;
