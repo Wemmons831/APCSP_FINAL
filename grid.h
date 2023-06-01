@@ -22,8 +22,8 @@ public:
         size = _size;
         for(int i = 0; i != rows * columns; i++)
         {
-            printf("x: %i, Y: %i", i/(columns),(i % columns) );
-            array.push_back({{floor(static_cast<float>(i)/(columns)), static_cast<float>(i % columns)},starting_color,{}});
+           
+            array.push_back({i/(columns),(i % columns) },starting_color,{}});
         }
         size_of_square = {static_cast<float>(GetScreenWidth())/columns,static_cast<float>(GetScreenHeight())/rows}; // might be some issues with int/float
         printf("size of array %i \n", array.size());
@@ -43,7 +43,7 @@ public:
         // draw colors
         for(Square & i : array)
         {
-            DrawRectangle(i.position.x * size_of_square.x, i.position.y * size_of_square.y, size_of_square.x,size_of_square.y, i.color );
+            DrawRectangle((i.position.x + 1 ) * size_of_square.x, (i.position.y +1) * size_of_square.y, size_of_square.x,size_of_square.y, i.color );
         }
     }
 };
