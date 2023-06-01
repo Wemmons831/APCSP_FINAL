@@ -5,7 +5,7 @@ struct Square {
     Vector2 position;
     Color color;
     std::vector<int> objects;
-}
+};
 class Grid
 {   
 public:    
@@ -20,7 +20,7 @@ public:
         size = _size;
         for(int i = 0; i != rows * columns; i++)
         {
-            array.push_back({{floor(static_cast<float>(i)/(columns)), i % columns},starting_color,{}});
+            array.push_back({{floor(static_cast<float>(i)/(columns)), static_cast<float>(i % columns)},starting_color,{}});
         }
     }
     
