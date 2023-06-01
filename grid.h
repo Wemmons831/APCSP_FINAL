@@ -22,6 +22,7 @@ public:
         size = _size;
         for(int i = 0; i != rows * columns; i++)
         {
+            printf("x: %i, Y: %i", floor(static_cast<float>(i)/(columns),static_cast<float>(i % columns) )
             array.push_back({{floor(static_cast<float>(i)/(columns)), static_cast<float>(i % columns)},starting_color,{}});
         }
         size_of_square = {static_cast<float>(GetScreenWidth())/columns,static_cast<float>(GetScreenHeight())/rows}; // might be some issues with int/float
@@ -36,16 +37,13 @@ public:
         for(int i = 0; i != columns; i++){
             DrawLineEx({position.x + ((size.x/columns) * (i+1)),position.y}, {position.x + ((size.x/columns) * (i+1)), position.y + size.y},thickness,BLACK);
         }
-        printf("here1 \n");
         for(int i = 0; i != rows; i++){
             DrawLineEx({position.x,position.y + ((size.y/rows) * (i+1))}, {position.x + size.x, position.y + ((size.y/rows) * (i+1))},thickness,BLACK);
         }
         // draw colors
         for(Square & i : array)
         {
-            printf("Pos X = %f, Pos y = %f seize of square = %f %f", i.position.x * size_of_square.x, i.position.y * size_of_square.y, size_of_square.x,size_of_square.y);
             DrawRectangle(i.position.x * size_of_square.x, i.position.y * size_of_square.y, size_of_square.x,size_of_square.y, i.color );
         }
-        printf("here");
     }
 };
