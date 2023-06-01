@@ -43,7 +43,7 @@ public:
         // draw colors
         for(Square & i : array)
         {
-            printf("X: %f, Y: %f \n",(i.position.x + 1 ) * size_of_square.x, (i.position.y +1) * size_of_square.y)
+            printf("X: %f, Y: %f \n",(i.position.x + 1 ) * size_of_square.x, (i.position.y +1) * size_of_square.y);
             DrawRectangle((i.position.x + 1 ) * size_of_square.x, (i.position.y +1) * size_of_square.y, size_of_square.x,size_of_square.y, i.color );
         }
     }
