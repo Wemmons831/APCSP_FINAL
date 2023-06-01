@@ -23,7 +23,7 @@ public:
         for(int i = 0; i != rows * columns; i++)
         {
            
-            array.push_back({i/(columns),(i % columns) },starting_color,{}});
+            array.push_back({{i/(columns),(i % columns)},starting_color,{}});
         }
         size_of_square = {static_cast<float>(GetScreenWidth())/columns,static_cast<float>(GetScreenHeight())/rows}; // might be some issues with int/float
         printf("size of array %i \n", array.size());
