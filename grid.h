@@ -22,7 +22,7 @@ public:
         size = _size;
         for(int i = 0; i != rows * columns; i++)
         {
-            printf("x: %i, Y: %i", floor(static_cast<float>(i)/(columns),static_cast<float>(i % columns) );
+            printf("x: %i, Y: %i", floor(static_cast<float>(i)/(columns))f,static_cast<float>(i % columns) );
             array.push_back({{floor(static_cast<float>(i)/(columns)), static_cast<float>(i % columns)},starting_color,{}});
         }
         size_of_square = {static_cast<float>(GetScreenWidth())/columns,static_cast<float>(GetScreenHeight())/rows}; // might be some issues with int/float
