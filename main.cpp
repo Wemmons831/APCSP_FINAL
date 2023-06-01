@@ -31,7 +31,6 @@ int main(void)
 
             ClearBackground(GRAY);
             grid.Draw({0,0});
-            DrawFPS(0,0);
         EndDrawing();
         //----------------------------------------------------------------------------------
     }
