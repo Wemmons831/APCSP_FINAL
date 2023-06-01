@@ -23,7 +23,7 @@ public:
         {
             array.push_back({{floor(static_cast<float>(i)/(columns)), static_cast<float>(i % columns)},starting_color,{}});
         }
-        size_of_square = {GetScreenWidth/columns,GetScreenHeight/rows}; // might be some issues with int/float
+        size_of_square = {GetScreenWidth()/columns,GetScreenHeight()/rows}; // might be some issues with int/float
     }
     
     void Draw(Vector2 position,int thickness = 5)
