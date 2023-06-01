@@ -18,9 +18,9 @@ public:
         rows = _rows;
         columns = _columns;
         size = _size;
-        for(int i = 0; i != rows * columns, i++)
+        for(int i = 0; i != rows * columns; i++)
         {
-            array.push_back({{floor(i/(columns)), i % columns},starting_color,{}});
+            array.push_back({{floor(static_cast<float>(i)/(columns)), i % columns},starting_color,{}});
         }
     }
     
@@ -28,7 +28,7 @@ public:
     {
         //draw lines
         for(int i = 0; i != columns; i++){
-            DrawLineEx({position.y, position.x + ((size.x/columns) * (i+1))}, {position.y + size.y, position.x + ((size.x/columns) * (i+1)),thickness,BLACK)
+            DrawLineEx({position.y, position.x + ((size.x/columns) * (i+1))}, {position.y + size.y, position.x + ((size.x/columns) * (i+1))},thickness,BLACK);
         }
     }
 };
