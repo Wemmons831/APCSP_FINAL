@@ -25,7 +25,7 @@ public:
             array.push_back({{floor(static_cast<float>(i)/(columns)), static_cast<float>(i % columns)},starting_color,{}});
         }
         size_of_square = {static_cast<float>(GetScreenWidth())/columns,static_cast<float>(GetScreenHeight())/rows}; // might be some issues with int/float
-        printf("size of array %i", array.size());
+        printf("size of array %i \n", array.size());
     }
     
     void Draw(Vector2 position,int thickness = 5)
@@ -36,7 +36,7 @@ public:
         for(int i = 0; i != columns; i++){
             DrawLineEx({position.x + ((size.x/columns) * (i+1)),position.y}, {position.x + ((size.x/columns) * (i+1)), position.y + size.y},thickness,BLACK);
         }
-        printf("here1");
+        printf("here1 \n");
         for(int i = 0; i != rows; i++){
             DrawLineEx({position.x,position.y + ((size.y/rows) * (i+1))}, {position.x + size.x, position.y + ((size.y/rows) * (i+1))},thickness,BLACK);
         }
