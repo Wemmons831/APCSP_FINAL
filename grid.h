@@ -31,6 +31,13 @@ public:
     
     void Draw(Vector2 position,int thickness = 5)
     {
+        // draw colors
+        for(Square & i : array)
+        {
+            //printf("X: %f, Y: %f \n",(i.position.x + 1 ) * size_of_square.x, (i.position.y +1) * size_of_square.y);
+            DrawRectangle((i.position.x ) * size_of_square.x, (i.position.y) * size_of_square.y, size_of_square.x,size_of_square.y, i.color );
+        }
+        
         //draw lines
         DrawLineEx(position,{position.x + size.x, position.y}, thickness, BLACK);
         DrawLineEx(position,{position.x, position.y + size.y}, thickness, BLACK);
@@ -40,11 +47,6 @@ public:
         for(int i = 0; i != rows; i++){
             DrawLineEx({position.x,position.y + ((size.y/rows) * (i+1))}, {position.x + size.x, position.y + ((size.y/rows) * (i+1))},thickness,BLACK);
         }
-        // draw colors
-        for(Square & i : array)
-        {
-            //printf("X: %f, Y: %f \n",(i.position.x + 1 ) * size_of_square.x, (i.position.y +1) * size_of_square.y);
-            DrawRectangle((i.position.x + 1 ) * size_of_square.x, (i.position.y +1) * size_of_square.y, size_of_square.x,size_of_square.y, i.color );
-        }
+        
     }
 };
