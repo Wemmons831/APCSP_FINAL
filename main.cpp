@@ -8,9 +8,9 @@ int main(void)
 {
     // Initialization
     //--------------------------------------------------------------------------------------
-    const int screenWidth = 800;
-    const int screenHeight = 450;
-    Grid grid(5,5,{500,500});
+    const int screenWidth = 1280;
+    const int screenHeight = 720;
+    Grid grid(5,5,{1270,710});
     InitWindow(screenWidth, screenHeight, "raylib [core] example - basic window");
 
     SetTargetFPS(60);               // Set our game to run at 60 frames-per-second
@@ -30,8 +30,8 @@ int main(void)
         BeginDrawing();
 
             ClearBackground(GRAY);
-            grid.Draw({50,50});
-            
+            grid.Draw({0,0});
+            DrawFPS(0,0)
         EndDrawing();
         //----------------------------------------------------------------------------------
     }

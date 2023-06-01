@@ -13,6 +13,7 @@ public:
     int columns;
     std::vector<Square> array;
     Vector2 size;
+    Vector2 size_of_square
     Grid(int _columns, int _rows,Vector2 _size, Color starting_color = RED)
     {
         rows = _rows;
@@ -22,6 +23,7 @@ public:
         {
             array.push_back({{floor(static_cast<float>(i)/(columns)), static_cast<float>(i % columns)},starting_color,{}});
         }
+        size_of_square = {GetScreenWidth/columns,GetScreenHeight/rows} // might be some issues with int/float
     }
     
     void Draw(Vector2 position,int thickness = 5)
@@ -35,6 +37,11 @@ public:
 
         for(int i = 0; i != rows; i++){
             DrawLineEx({position.x,position.y + ((size.y/rows) * (i+1))}, {position.x + size.x, position.y + ((size.y/rows) * (i+1))},thickness,BLACK);
+        }
+        // draw colors
+        for (Square i : array)
+        {
+            DrawRectangle(i.position.x * size_of_square.x, i.position.y * size_of_square.y, size_of_square.x,size_of_square.y, i.color );
         }
     }
 };
