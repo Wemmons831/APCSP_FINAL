@@ -25,7 +25,7 @@ public:
            
             array.push_back({{static_cast<float>(i/(columns)),static_cast<float>(i % columns)},starting_color,{}});
         }
-        size_of_square = {static_cast<float>(GetScreenWidth())/columns,static_cast<float>(GetScreenHeight())/rows}; // might be some issues with int/float
+        size_of_square = {static_cast<float>(GetScreenWidth()/columns),static_cast<float>(GetScreenHeight()/rows)}; // might be some issues with int/float
         printf("size of array %i \n", array.size());
     }
     
