@@ -41,10 +41,11 @@ public:
             DrawLineEx({position.x,position.y + ((size.y/rows) * (i+1))}, {position.x + size.x, position.y + ((size.y/rows) * (i+1))},thickness,BLACK);
         }
         // draw colors
-        for (auto i : array)
+        for(Square & i : array)
         {
             printf("Pos X = %f, Pos y = %f seize of square = %f %f", i.position.x * size_of_square.x, i.position.y * size_of_square.y, size_of_square.x,size_of_square.y);
             DrawRectangle(i.position.x * size_of_square.x, i.position.y * size_of_square.y, size_of_square.x,size_of_square.y, i.color );
         }
+        printf("here")
     }
 };
