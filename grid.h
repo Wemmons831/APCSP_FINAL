@@ -36,7 +36,7 @@ public:
         for(int i = 0; i != columns; i++){
             DrawLineEx({position.x + ((size.x/columns) * (i+1)),position.y}, {position.x + ((size.x/columns) * (i+1)), position.y + size.y},thickness,BLACK);
         }
-
+        printf("here1");
         for(int i = 0; i != rows; i++){
             DrawLineEx({position.x,position.y + ((size.y/rows) * (i+1))}, {position.x + size.x, position.y + ((size.y/rows) * (i+1))},thickness,BLACK);
         }
