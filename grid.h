@@ -28,7 +28,7 @@ public:
     {
         //draw lines
         for(int i = 0; i != columns; i++){
-            DrawLineEx({position.y, position.x + ((size.x/columns) * (i+1))}, {position.y + size.y, position.x + ((size.x/columns) * (i+1))},thickness,BLACK);
+            DrawLineEx({position.x + ((size.x/columns) * (i+1)),position.y}, {position.x + ((size.x/columns) * (i+1)), position.y + size.y},thickness,BLACK);
         }
     }
 };
