@@ -27,6 +27,8 @@ public:
     void Draw(Vector2 position,int thickness = 5)
     {
         //draw lines
+        DrawLineEX(position,{position.x + size.x, position.y}, thickness, BLACK);
+        DrawLineEX(position,{position.x, position.y + size.y}, thickness, BLACK)
         for(int i = 0; i != columns; i++){
             DrawLineEx({position.x + ((size.x/columns) * (i+1)),position.y}, {position.x + ((size.x/columns) * (i+1)), position.y + size.y},thickness,BLACK);
         }
