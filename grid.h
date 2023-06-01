@@ -25,8 +25,9 @@ public:
             array.push_back({{floor(static_cast<float>(i)/(columns)), static_cast<float>(i % columns)},starting_color,{}});
         }
         size_of_square = {static_cast<float>(GetScreenWidth())/columns,static_cast<float>(GetScreenHeight())/rows}; // might be some issues with int/float
+        printf("size of array %i", array.size());
     }
-    printf("%f", array.size());
+    
     void Draw(Vector2 position,int thickness = 5)
     {
         //draw lines
