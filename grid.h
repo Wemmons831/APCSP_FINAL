@@ -1,7 +1,7 @@
 #include "raylib.h"
 #include "vector"
 #include "cmath"
-#include <stdio>
+#include <stdio.h>
 struct Square {
     Vector2 position;
     Color color;
