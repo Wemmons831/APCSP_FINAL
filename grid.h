@@ -46,6 +46,6 @@ public:
             printf("Pos X = %f, Pos y = %f seize of square = %f %f", i.position.x * size_of_square.x, i.position.y * size_of_square.y, size_of_square.x,size_of_square.y);
             DrawRectangle(i.position.x * size_of_square.x, i.position.y * size_of_square.y, size_of_square.x,size_of_square.y, i.color );
         }
-        printf("here")
+        printf("here");
     }
 };
