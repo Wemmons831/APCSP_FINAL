@@ -30,7 +30,7 @@ int main(void)
         BeginDrawing();
 
             ClearBackground(GRAY);
-            grid.Draw({500,500});
+            grid.Draw({50,50});
             
         EndDrawing();
         //----------------------------------------------------------------------------------
