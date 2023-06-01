@@ -26,7 +26,7 @@ public:
         }
         size_of_square = {static_cast<float>(GetScreenWidth())/columns,static_cast<float>(GetScreenHeight())/rows}; // might be some issues with int/float
     }
-    printf("%i", array.size())
+    printf("%i", array.size());
     void Draw(Vector2 position,int thickness = 5)
     {
         //draw lines
