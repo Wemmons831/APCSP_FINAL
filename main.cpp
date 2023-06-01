@@ -15,8 +15,6 @@ int main(void)
     SetTargetFPS(60);               // Set our game to run at 60 frames-per-second
     //--------------------------------------------------------------------------------------
 
-    Ball ball({screenWidth/2,screenHeight/2}, 10 , BLUE);
-    ball.force = {10,10};
 
     // Main game loop
     while (!WindowShouldClose())    // Detect window close button or ESC key
@@ -25,13 +23,13 @@ int main(void)
         //----------------------------------------------------------------------------------
         // TODO: Update your variables here
         //----------------------------------------------------------------------------------
-        ball.Update();
+       
         // Draw
         //----------------------------------------------------------------------------------
         BeginDrawing();
 
             ClearBackground(GRAY);
-            ball.Draw();
+            
         EndDrawing();
         //----------------------------------------------------------------------------------
     }
