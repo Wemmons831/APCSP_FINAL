@@ -18,6 +18,7 @@ int main(void)
     int frame = 0;
     bool down = false;
     Rectangle difficulty = {static_cast<float>(screenWidth/2 - 100),static_cast<float>(screenHeight + 50), 200, 75};
+    printf("X: %f, Y: ", difficulty.x,difficulty.y)
     char* currentDifficulty = "EASY";
 
     InitWindow(screenWidth, screenHeight, "raylib [core] example - basic window");
@@ -48,7 +49,7 @@ int main(void)
                     ClearBackground(RAYWHITE);
                     DrawText("Color Code",GetScreenWidth()/2 - (MeasureText("Color Code",24 + frame)/2),GetScreenHeight()/2 - 125, 24+ frame, BLACK);
                     DrawRectangleRec(difficulty, BLUE);
-                    //DrawText(currentDifficulty, difficulty.x + difficulty.width - MeasureText(currentDifficulty,18)/2, difficulty.y + difficulty.height/2,18,BLACK);
+                    DrawText(currentDifficulty, difficulty.x + difficulty.width - MeasureText(currentDifficulty,18)/2, difficulty.y + difficulty.height/2,18,BLACK);
                 EndDrawing();
                 break;
             case 1:
