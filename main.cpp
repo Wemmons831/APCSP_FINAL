@@ -17,7 +17,7 @@ int main(void)
     // home screen stuff
     int frame = 0;
     bool down = false;
-    Rectangle difficulty = {GetScreenWidth()/2 - 100, GetScreenHeight() + 50, 200, 75}
+    Rectangle difficulty = {GetScreenWidth()/2.0f - 100.f, GetScreenHeight() + 50.0f, 200.0f, 75.0f};
 
 
     InitWindow(screenWidth, screenHeight, "raylib [core] example - basic window");
