@@ -17,7 +17,7 @@ int main(void)
     // home screen stuff
     int frame = 0;
     bool down = false;
-    Rectangle difficulty = {GetScreenWidth()/2 - 100, GetScreenHeight() + 50, 200, 75};
+    Rectangle difficulty = {static_cast<float>(GetScreenWidth()/2 - 100), static_cast<float>(GetScreenHeight() + 50), 200, 75};
 
 
     InitWindow(screenWidth, screenHeight, "raylib [core] example - basic window");
@@ -43,7 +43,7 @@ int main(void)
                         down = !down;
                     }
                     if(frame == 0){
-                        down = !down
+                        down = !down;
                     }
                     ClearBackground(RAYWHITE);
                     DrawText("Color Code",GetScreenWidth()/2 - (MeasureText("Color Code",24 + frame)/2),GetScreenHeight()/2 - 125, 24+ frame, BLACK);
