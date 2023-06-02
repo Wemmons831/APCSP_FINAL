@@ -18,7 +18,7 @@ int main(void)
     int frame = 0;
     bool down = false;
     Rectangle difficulty = {static_cast<float>(screenWidth/2 - 100),static_cast<float>(screenHeight + 50), 200, 75};
-    printf("X: %f, Y: ", difficulty.x,difficulty.y)
+    printf("X: %f, Y: ", difficulty.x,difficulty.y);
     char* currentDifficulty = "EASY";
 
     InitWindow(screenWidth, screenHeight, "raylib [core] example - basic window");
