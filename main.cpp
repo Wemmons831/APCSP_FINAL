@@ -48,7 +48,7 @@ int main(void)
                     ClearBackground(RAYWHITE);
                     DrawText("Color Code",GetScreenWidth()/2 - (MeasureText("Color Code",24 + frame)/2),GetScreenHeight()/2 - 125, 24+ frame, BLACK);
                     DrawRectangleRec(difficulty, BLUE);
-                    DrawText(currentDifficulty, difficulty.x + difficulty.width - MeasureText(difficulty,18)/2, difficulty.y + difficulty.height/2);
+                    DrawText(currentDifficulty, difficulty.x + difficulty.width - MeasureText(currentDifficulty,18)/2, difficulty.y + difficulty.height/2);
                 EndDrawing();
                 break;
             case 1:
