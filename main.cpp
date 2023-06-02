@@ -17,8 +17,8 @@ int main(void)
     // home screen stuff
     int frame = 0;
     bool down = false;
-    Rectangle difficulty = {static_cast<float>(500), static_cast<float>(GetScreenHeight() + 50), 200, 75};
-
+    Rectangle difficulty = {static_cast<float>(screenWidth/2 - 100),static_cast<float>(screenHeight + 50), 200, 75};
+    char* currentDifficulty = "EASY";
 
     InitWindow(screenWidth, screenHeight, "raylib [core] example - basic window");
 
@@ -27,7 +27,7 @@ int main(void)
 
 
     // Main game loop
-    while (!WindowShouldClose())    // Detect window close button or ESC key
+    while (!WindowShouldClose())    // Detect window close button  or ESC key
     {
         switch(screen)
         {
@@ -48,6 +48,7 @@ int main(void)
                     ClearBackground(RAYWHITE);
                     DrawText("Color Code",GetScreenWidth()/2 - (MeasureText("Color Code",24 + frame)/2),GetScreenHeight()/2 - 125, 24+ frame, BLACK);
                     DrawRectangleRec(difficulty, BLUE);
+                    DrawText(currentDifficulty, difficulty.x + difficulty.width - MeasureText(difficulty,18)/2, difficulty.y + difficulty.height/2);
                 EndDrawing();
                 break;
             case 1:
