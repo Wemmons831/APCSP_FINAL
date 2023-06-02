@@ -34,7 +34,7 @@ jobs:
       - name: mkdir
         run: mkdir -p ./out
       - name: Build
-        run: emcc -o out/index.html main.cpp -Os -Wall ./libraylib.a -I. -I./ -L. -L./ -s USE_GLFW=3 -s ASYNCIFY -DPLATFORM_WEB
+        run: emcc -o out/index.html main.cpp -Os -Wall ./lib/libraylib.a -I. -I./include/ -L. -L./ -s USE_GLFW=3 -s ASYNCIFY -DPLATFORM_WEB
            
       - name: PACK
         uses: actions/upload-pages-artifact@v1
