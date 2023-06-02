@@ -11,7 +11,7 @@ int main(void)
     const int screenWidth = 1280;
     const int screenHeight = 720;
     int screen = 0;
-    int frame = 0
+    int frame = 0;
     Grid grid(5,5,{1270,710});
     InitWindow(screenWidth, screenHeight, "raylib [core] example - basic window");
 
@@ -26,7 +26,7 @@ int main(void)
         {
             case 0:
                 BeginDrawing();
-                    frame++
+                    frame++;
                     if(frame > 20){
                         frame = 0;
                     }
