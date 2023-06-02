@@ -11,8 +11,15 @@ int main(void)
     const int screenWidth = 1280;
     const int screenHeight = 720;
     int screen = 0;
-    int frame = 0;
+   
     Grid grid(5,5,{1270,710});
+    
+    // home screen stuff
+    int frame = 0;
+    bool down = false;
+    Rectangle difficulty = {GetScreenWidth()/2 - 100, GetScreenHeight() + 50, 200, 75}
+
+
     InitWindow(screenWidth, screenHeight, "raylib [core] example - basic window");
 
     SetTargetFPS(60);               // Set our game to run at 60 frames-per-second
@@ -26,12 +33,18 @@ int main(void)
         {
             case 0:
                 BeginDrawing();
-                    frame++;
-                    if(frame > 20){
-                        frame = 0;
+                    if(down){
+                        frame -= 1;
+                    }
+                    else{
+                        frame++;
+                    }
+                    if(frame > 60){
+                        down != down
                     }
                     ClearBackground(RAYWHITE);
-                    DrawText("Color Code",GetScreenWidth()/2 - (MeasureText("Color Code",24 + frame)/2),GetScreenHeight()/2, 24+ frame, BLACK);
+                    DrawText("Color Code",GetScreenWidth()/2 - (MeasureText("Color Code",24 + frame)/2),GetScreenHeight()/2 - 125, 24+ frame, BLACK);
+                    DrawRectangleRec(difficulty, BLUE);
                 EndDrawing();
                 break;
             case 1:
