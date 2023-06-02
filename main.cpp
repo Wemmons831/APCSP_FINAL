@@ -40,7 +40,7 @@ int main(void)
                         frame++;
                     }
                     if(frame > 60){
-                        down != down
+                        down = !down;
                     }
                     ClearBackground(RAYWHITE);
                     DrawText("Color Code",GetScreenWidth()/2 - (MeasureText("Color Code",24 + frame)/2),GetScreenHeight()/2 - 125, 24+ frame, BLACK);
