@@ -33,6 +33,12 @@ int main(void)
         switch(screen)
         {
             case 0:
+                if(IsMouseButtonPressed(0)){
+                    if(CheckCollisionPointRec({GetMouseX,GetMouseY},difficulty)){
+                        
+                    }
+                }
+                
                 BeginDrawing();
                     if(down){
                         frame -= 1;
@@ -49,7 +55,7 @@ int main(void)
                     ClearBackground(RAYWHITE);
                     DrawText("Color Code",GetScreenWidth()/2 - (MeasureText("Color Code",24 + frame)/2),GetScreenHeight()/2 - 125, 24+ frame, BLACK);
                     DrawRectangleRec(difficulty, BLUE);
-                    DrawText(currentDifficulty, difficulty.x + difficulty.width/2 - MeasureText(currentDifficulty,24)/2, difficulty.y + difficulty.height/2,24,BLACK);
+                    DrawText(currentDifficulty, difficulty.x + difficulty.width/2 - MeasureText(currentDifficulty,32)/2, difficulty.y + difficulty.height/2,32,BLACK);
                 EndDrawing();
                 break;
             case 1:
