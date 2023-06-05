@@ -10,7 +10,7 @@ int main(void)
     //--------------------------------------------------------------------------------------
     const int screenWidth = 1280;
     const int screenHeight = 720;
-    int screen = 3;
+    int screen = 0;
 
     Grid grid(5, 5, {1280, 550});
 
