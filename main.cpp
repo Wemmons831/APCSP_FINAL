@@ -1,5 +1,4 @@
 #include "raylib.h"
-#include "ball.hpp"
 #include "grid.h"
 //------------------------------------------------------------------------------------
 // Program main entry point
@@ -14,14 +13,14 @@ int main(void)
 
     Grid grid(5, 5, {1280, 550});
 
-    // home screen stuff
+    // home screen varibles
     int frame = 0;
     bool down = false;
     Rectangle difficulty = {static_cast<float>(screenWidth/2 - 150),static_cast<float>(screenHeight/2 + 25), 300, 75};
     Rectangle start = {static_cast<float>(screenWidth / 2 - 150), static_cast<float>(screenHeight / 2 + 150), 300, 75};
-    printf("X: %f, Y: \n", difficulty.x,difficulty.y);
     char* currentDifficulty = "EASY";
     
+    //main screen varibles
     int currentylDrawingColor = 0;
     int currentColor = 0;
     int round = 0;
@@ -44,6 +43,7 @@ int main(void)
         {
             case 0:
                 if(IsMouseButtonPressed(0)){
+                    //change difficulty
                     if(CheckCollisionPointRec({float(GetMouseX()),float(GetMouseY())},difficulty)){
                         if(currentDifficulty == "EASY"){
                             currentDifficulty = "MEDIUM";
@@ -57,6 +57,7 @@ int main(void)
                             currentDifficulty = "EASY";
                         }    
                     }
+                    //start game with approprate gride size
                     if (CheckCollisionPointRec({float(GetMouseX()), float(GetMouseY())},start)){
                         if (currentDifficulty == "EASY")
                         {
@@ -71,6 +72,7 @@ int main(void)
                         {
                             grid = Grid(5, 5, {1280, 550});
                         }
+                        // starting values for main screen
                         startTime = GetTime();
                         endTime = GetTime() + 5;
                         grid.array[0].reveeled = true;
@@ -80,9 +82,23 @@ int main(void)
                         num_of_correct = 0;
                         how_many_to_reveal = 0;
                     }
+                    if(CheckCollisionPointRec({float(GetMouseX()), float(GetMouseY())},{0,0,50,50})){
+                        grid = Grid(8,8, {1280,550});
+                        currentDifficulty = "EXTREME";
+                        startTime = GetTime();
+                        endTime = GetTime() + 5;
+                        grid.array[0].reveeled = true;
+                        screen = 1;
+                        round = 0;
+                        wrongs = 0;
+                        num_of_correct = 0;
+                        how_many_to_reveal = 0;
+
+                    }
                 }
                 
                 BeginDrawing();
+                // used for controling the size of title screen
                     if(down){
                         frame -= 1;
                     }
@@ -95,6 +111,7 @@ int main(void)
                     if(frame == 0){
                         down = !down;
                     }
+
                     ClearBackground(RAYWHITE);
                     DrawText("Color Code",GetScreenWidth()/2 - (MeasureText("Color Code",24 + frame)/2),GetScreenHeight()/2 - 125, 24+ frame, BLACK);
                     DrawRectangleRec(difficulty, BLUE);
