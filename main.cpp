@@ -155,7 +155,7 @@ int main(void)
                         grid.array[i].reveeled = true;
                     }
                 }
-                if (round == grid.rows * grid.array){
+                if (round == grid.rows * grid.rows){
                     screen = 2;
                 }
                 if(wrongs == 3){
