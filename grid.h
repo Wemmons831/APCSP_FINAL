@@ -2,10 +2,11 @@
 #include "vector"
 #include "cmath"
 #include <stdio.h>
+std::vector<Color> colors = {RED, ORANGE, YELLOW, GREEN, BLUE, PURPLE};
 struct Square {
     Vector2 position;
-    Color color;
-    std::vector<int> objects;
+    int color;
+    bool reveeled = false;
 };
 class Grid
 {   
@@ -23,7 +24,7 @@ public:
         for(int i = 0; i != rows * columns; i++)
         {
            
-            array.push_back({{static_cast<float>(i/(columns)),static_cast<float>(i % columns)},starting_color,{}});
+            array.push_back({{static_cast<float>(i/(columns)),static_cast<float>(i % columns)},GetRandomValue(0,5)});
         }
         size_of_square = {size.x/columns, size.y/rows}; // might be some issues with int/float
         printf("size of array %i \n", array.size());
@@ -35,7 +36,13 @@ public:
         for(Square & i : array)
         {
             //printf("X: %f, Y: %f \n",(i.position.x + 1 ) * size_of_square.x, (i.position.y +1) * size_of_square.y);
-            DrawRectangle((i.position.x ) * size_of_square.x, (i.position.y) * size_of_square.y, size_of_square.x,size_of_square.y, i.color );
+            if(i.reveeled){
+                DrawRectangle((i.position.x * size_of_square.x) + position.x, (i.position.y * size_of_square.y) + position.y, size_of_square.x,size_of_square.y, colors[i.color]);
+            }
+            else
+            {
+                DrawRectangle((i.position.x * size_of_square.x) + position.x, (i.position.y * size_of_square.y) + position.y, size_of_square.x, size_of_square.y, GRAY);
+            }
         }
         
         //draw lines
