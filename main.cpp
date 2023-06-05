@@ -146,6 +146,7 @@ int main(void)
                 }
                 if(round + 1 == num_of_correct){
                     round++;
+                    
                     hidden = false;
                     endTime = GetTime() + 5;
                     num_of_correct = 0;
@@ -153,6 +154,9 @@ int main(void)
                     for(int i =0; i != how_many_to_reveal + 1; i++){
                         grid.array[i].reveeled = true;
                     }
+                }
+                if (round == grid.rows * grid.array){
+                    screen = 2;
                 }
                 if(wrongs == 3){
                     screen = 3;
