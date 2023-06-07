@@ -30,6 +30,7 @@ int main(void)
     int num_of_correct = 0;
     int wrongs = 0;
     int how_many_to_reveal = 0;
+    void InitAudioDevice();   
     Music song = LoadMusicStream("music/music.mp3"); //loads music (does not work in web due to wasm file struture)
     InitWindow(screenWidth, screenHeight, "raylib [core] example - basic window");
     printf("%i \n",IsMusicReady(song));
