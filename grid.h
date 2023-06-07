@@ -2,7 +2,8 @@
 #include "vector"
 #include "cmath"
 #include <stdio.h>
-std::vector<Color> colors = {RED, ORANGE, YELLOW, GREEN, BLUE, PURPLE};
+std::vector<Color> colors = {RED, ORANGE, YELLOW, GREEN, BLUE, PURPLE}; // possible colors
+// struct that allows sqaure to be better
 struct Square {
     Vector2 position;
     int color;
@@ -16,6 +17,7 @@ public:
     std::vector<Square> array;
     Vector2 size;
     Vector2 size_of_square;
+    //constuctur that allows grid size and shape to change
     Grid(int _columns, int _rows,Vector2 _size, Color starting_color = RED)
     {
         rows = _rows;
@@ -32,6 +34,7 @@ public:
     
     void Draw(Vector2 position,int thickness = 5)
     {
+        
         // draw colors
         for(Square & i : array)
         {

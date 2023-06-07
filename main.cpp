@@ -30,7 +30,7 @@ int main(void)
     int num_of_correct = 0;
     int wrongs = 0;
     int how_many_to_reveal = 0;
-    Music song = LoadMusicStream("music/music.mp3");
+    Music song = LoadMusicStream("music/music.mp3"); //loads music (does not work in web due to wasm file struture)
     InitWindow(screenWidth, screenHeight, "raylib [core] example - basic window");
     PlayMusicStream(song);
     SetTargetFPS(60);               // Set our game to run at 60 frames-per-second
