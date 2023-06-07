@@ -83,8 +83,8 @@ int main(void)
                         how_many_to_reveal = 0;
                     }
                     if(CheckCollisionPointRec({float(GetMouseX()), float(GetMouseY())},{0,0,50,50})){
-                        grid = Grid(8,8, {1280,550});
-                        currentDifficulty = "EXTREME";
+                        grid = Grid(6ol,6, {1280,550});
+                        currentDifficulty = "OLI";
                         startTime = GetTime();
                         endTime = GetTime() + 5;
                         grid.array[0].reveeled = true;
