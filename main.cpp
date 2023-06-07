@@ -30,8 +30,9 @@ int main(void)
     int num_of_correct = 0;
     int wrongs = 0;
     int how_many_to_reveal = 0;
+    Music song = LoadMusicStream("music/music.mp3");
     InitWindow(screenWidth, screenHeight, "raylib [core] example - basic window");
-
+    PlayMusicStream(song);
     SetTargetFPS(60);               // Set our game to run at 60 frames-per-second
     //--------------------------------------------------------------------------------------
 
@@ -82,6 +83,7 @@ int main(void)
                         num_of_correct = 0;
                         how_many_to_reveal = 0;
                     }
+                    //hidden game mode acsessible by clicking the top left
                     if(CheckCollisionPointRec({float(GetMouseX()), float(GetMouseY())},{0,0,50,50})){
                         grid = Grid(6,6, {1280,550});
                         currentDifficulty = "OLI";
@@ -123,6 +125,7 @@ int main(void)
                 EndDrawing();
                 break;
             case 1:
+                //selecting the current color
                 if(IsMouseButtonPressed(0)){
                     currentylDrawingColor = 0;
                     for( Color i : colors)
@@ -133,6 +136,7 @@ int main(void)
                         currentylDrawingColor++;
                     }
                 }
+                //see if time for hidding the colors
                 startTime = GetTime();
                 if(endTime - startTime <= 0  && !hidden){
                     for(int i = 0; i != grid.rows * grid.columns; i++){
@@ -147,6 +151,7 @@ int main(void)
                     {
                         if (IsMouseButtonPressed(0))
                         {
+                            //check if selected color nd the matched calor is correct and if not add a wrong
                             if (CheckCollisionPointRec({float(GetMouseX()), float(GetMouseY())}, {(grid.array[i].position.x * grid.size_of_square.x) + 0, (grid.array[i].position.y * grid.size_of_square.y) + 50, grid.size_of_square.x, grid.size_of_square.y}))
                             {
                                 if (currentColor == grid.array[i].color && !grid.array[i].reveeled)
@@ -155,12 +160,13 @@ int main(void)
                                     num_of_correct++;
                                 }
                                 else {wrongs++;
-                                printf("here \n");
+                                
                                 }
                             }
                         }
                     }
                 }
+                //increment rounds
                 if(round + 1 == num_of_correct){
                     round++;
                     
@@ -172,6 +178,7 @@ int main(void)
                         grid.array[i].reveeled = true;
                     }
                 }
+                //check if finished or lost
                 if (round == grid.rows * grid.rows){
                     screen = 2;
                 }
@@ -199,6 +206,7 @@ int main(void)
                 EndDrawing();
                 break;
             case 2:
+            //Complete screen
                 if (IsMouseButtonPressed(0) && CheckCollisionPointRec({float(GetMouseX()), float(GetMouseY())},start))
                 {
                     screen = 0;
@@ -211,6 +219,7 @@ int main(void)
                 EndDrawing();
                 break;
             case 3:
+            // death screen
                 if (IsMouseButtonPressed(0) && CheckCollisionPointRec({float(GetMouseX()), float(GetMouseY())}, start))
                 {
                     screen = 0;
