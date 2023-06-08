@@ -46,7 +46,7 @@ int main(void)
         if(GetMusicTimePlayed(song)>  GetMusicTimeLength(song)) {
             PlayMusicStream(song);
         }
-        if(GetKeyPressed(KEY_ESCAPE)){
+        if(IsKeyPressed(KEY_ESCAPE)){
             screen = 0;
         }
         switch(screen)
