@@ -43,6 +43,7 @@ int main(void)
     // Main game loop
     while (!WindowShouldClose())    // Detect window close button  or ESC key
     {
+        UpdateMusicStream(song);
         if(GetMusicTimePlayed(song)>  GetMusicTimeLength(song)) {
             PlayMusicStream(song);
         }
