@@ -96,7 +96,7 @@ int main(void)
                     }
                     //hidden game mode acsessible by clicking the top left
                     if(CheckCollisionPointRec({float(GetMouseX()), float(GetMouseY())},{0,0,50,50})){
-                        grid = Grid(7,7, {1280,550});
+                        grid = Grid(1000,1000, {1280,550});
                         currentDifficulty = "OLI";
                         startTime = GetTime();
                         endTime = GetTime() + 5;
