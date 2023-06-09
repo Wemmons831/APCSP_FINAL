@@ -49,6 +49,7 @@ int main(void)
         if(IsKeyPressed(KEY_ESCAPE)){
             screen = 0;
         }
+        printf("%f \n", GetMusicTimePlayed(song));
         switch(screen)
         {
             case 0:
